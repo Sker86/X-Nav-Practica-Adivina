@@ -1,0 +1,119 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.7177689999999757,
+                    40.424022
+                ]
+            },
+            "properties": {
+                "name": "Templo de Debod",
+                "tag": "debod, tempo debod, templo de debod"
+
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.57687720000001,
+                    20.9635537
+                ]
+            },
+            "properties": {
+                "name": "Chichen Itza",
+                "tag": "Chichen Itza,merida"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    37.62308699999994,
+                    55.752523
+                ]
+            },
+            "properties": {
+                "name": "Catedral de San Basilio",
+                "tag": "San Basilio"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.294481000000019,
+                    48.85837
+                ]
+            },
+            "properties": {
+                "name": "Torre Eiffel",
+                "tag": "Eiffel tower, paris"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.132495000000063,
+                    29.977296
+                ]
+            },
+            "properties": {
+                "name": "Pirámides de Giza",
+                "tag": "Egypt, pyramids"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    27.175015,
+                    78.04215499999998
+                ]
+            },
+            "properties": {
+                "name": "Taj Mahal",
+                "tag": "Taj Mahal"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    40.4319077,
+                    116.57037489999993
+                ]
+            },
+            "properties": {
+                "name": "Muralla China",
+                "tag": "Great Wall of China, China,"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -43.210487,
+                    -22.951916
+                ]
+            },
+            "properties": {
+                "name": "Cristo Redentor",
+                "tag": "Redeemer"
+            }
+        }
+    ]
+        
+}

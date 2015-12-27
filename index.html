@@ -39,20 +39,20 @@
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a id="selJuego" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Juego <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a>Ciudades</a></li>
-              <li><a>Monumentos</a></li>
-              <li><a>Estadios</a></li>
+            <ul id="listJuego" class="dropdown-menu">
+              <li><a href="javascript:selectJuego('Ciudades');">Ciudades</a></li>
+              <li><a href="javascript:selectJuego('Monumentos');">Monumentos</a></li>
+              <li><a href="javascript:selectJuego('Estadios');">Estadios</a></li>
               <li role="separator" class="divider"></li>
-              <li><a>Añadir más...</a></li>
+              <li><a href="javascript:alert('Añadir más...');">Añadir más...</a></li>
             </ul>
           </li>
           <li class="dropdown">
-            <a href="http://getbootstrap.com/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dificultad <span class="caret"></span></a>
+            <a id="selDificultad" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dificultad <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="">Fácil</a></li>
-              <li><a href="">Media</a></li>
-              <li><a href="">Difícil</a></li>
+              <li><a href="javascript:selectDificultad('Fácil', 3000);">Fácil</a></li>
+              <li><a href="javascript:selectDificultad('Media', 2000);">Media</a></li>
+              <li><a href="javascript:selectDificultad('Difícil', 1000);">Difícil</a></li>
             </ul>
           </li>
         </ul>
@@ -63,8 +63,10 @@
         </ul>
         -->
         <form class="navbar-form navbar-right">
-          <button id="empezar" type="button" class="btn btn-success">Empezar</button>
-          <button id="abandonar" type="button" class="btn btn-danger">Abandonar</button>
+          <button id="empezar" type="button" class="btn btn-success" onclick="empezarJuego()">Empezar</button>
+          <button id="continuar" type="button" class="btn btn-warning" onclick="continuarJuego()">Continuar</button>
+          <button id="finalizar" type="button" class="btn btn-success" onclick="finalizarJuego()">Finalizar</button>
+          <button id="abandonar" type="button" class="btn btn-danger" onclick="abandonarJuego()">Abandonar</button>
         </form>
       </div>
     </div>
@@ -73,39 +75,66 @@
   <div class="container">
 
     <!-- INICIO -->
-    <div id="inicio" style='display:none;'>
-      <div class="jumbotron" >
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="http://getbootstrap.com/examples/jumbotron/#" role="button">Learn more »</a></p>
-      </div>
+    <div id="inicio">
+      <div>
+        <div class="col-md-11">
+          <div class="jumbotron" >
+            <div class="container">
+              <h1>Bienvenido!</h1>
+              <p>¿Dónde estarías? es un juego online, se mostrarán unas imagenes y tendrás que descubrir en que lugar del mapa estás.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <img src="https://blogdondeesta.files.wordpress.com/2014/09/wally.jpg" alt="Wally" style="margin: 5px; width: 100%;" class="foto">
+        </div>
       </div>
 
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+            <h2>Cómo jugar</h2>
+            <p>Dando al botón de empezar empezará 1 de las 3 rondas en las que debes adivinar a que lugar pertenecen las fotos mostradas. Cada vez que se finaliza una ronda se pulsa continuar para empezar la siguiente ronda. Cuando finalicemos todas las rondas, daremos al botón de finalizar para guardar la partida y su puntuación. </p>
           </div>
           <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+            <img src="https://jordgunn.files.wordpress.com/2011/09/collage42.jpg" alt="Collage" style="width: 100%;" class="foto">
+          </div>
+          <div class="col-md-3">
+            <h2>Abandonar</h2>
+            <p>Una vez empezado el juego, en cualquier momento podemos pulsar el boton abandonar para detener el juego y volver a la página de inicio, si pulsamos abandonar perderemos el progreso y no se guardará la puntuación de una partida no finalizada. </p>
          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+         <div class="col-md-1">
+            
+         </div>
+        </div>
+         <hr>
+        <div id="historial1">
+          <div class="panel panel-info">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Histórico de juegos</div>
+            <!-- Table -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Juego</th>
+                  <th>Dificultad</th>
+                  <th>Puntuación</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody id="entradaHistorial">
+                
+              </tbody>
+            </table>
           </div>
         </div>
 
         <hr>
 
         <footer>
-          <p>© Company 2014</p>
+          <p>© Marcos Franco Cedillo 2015</p>
         </footer>
       </div> <!-- /container -->
     </div>
@@ -114,10 +143,8 @@
     <div id="juego">
       <h1 id="titulo"></h1>
       <div class="row">
-        <div class="col-md-6">
-          <div id="foto">
-            <img src="http://www.italiavacaciones.es/UserFiles/Image/coliseo_roma.jpg" alt="Roma" style="width: full; height: 400px;" class="img-rounded">
-          </div>
+        <div id="escaparate" class="col-md-6 bg-image">
+
         </div>
         <div class="col-md-6">
           <div id="map"></div>
@@ -139,15 +166,15 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>28937478</td>
+                    <td id="ronda1"></td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>5327823</td>
+                    <td id="ronda2"></td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>53423</td>
+                    <td id="ronda3"></td>
                   </tr>
                 </tbody>
               </table>
@@ -155,7 +182,7 @@
           </div>
         </div>
         <div class="col-md-8"> 
-          <div id="historial">
+          <div id="historial2">
             <div class="panel panel-info">
               <!-- Default panel contents -->
               <div class="panel-heading">Histórico de juegos</div>
@@ -165,29 +192,13 @@
                   <tr>
                     <th>#</th>
                     <th>Juego</th>
+                    <th>Dificultad</th>
                     <th>Puntuación</th>
                     <th>Fecha</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                <tbody id="entradaHistorialJuego">
+                  
                 </tbody>
               </table>
             </div>

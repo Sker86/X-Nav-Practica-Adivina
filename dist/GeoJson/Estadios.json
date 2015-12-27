@@ -1,0 +1,105 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.6903750000000173,
+                    40.451585
+                ]
+            },
+            "properties": {
+                "name": "Santiago Bernabeu",
+                "tag": "Santiago Bernabeu, madrid"
+
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.624706999999944,
+                    48.2188
+                ]
+            },
+            "properties": {
+                "name": "Allianz Arena",
+                "tag": "Allianz arena"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.960829999999987,
+                    53.430829
+                ]
+            },
+            "properties": {
+                "name": "Anfield",
+                "tag": "Anfield,Liverpool"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.926174,
+                    40.829643
+                ]
+            },
+            "properties": {
+                "name": "Yankee Stadium",
+                "tag": "Yankee Stadium,yankee"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -58.364756,
+                    -34.635611
+                ]
+            },
+            "properties": {
+                "name": "La Bombonera",
+                "tag": "Bombonera,Boca juniors"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -43.226166199999966,
+                    -22.9127036
+                ]
+            },
+            "properties": {
+                "name": "Maracana",
+                "tag": "Maracana,Brasil"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.3048409000000447,
+                    51.550501
+                ]
+            },
+            "properties": {
+                "name": "Wembley",
+                "tag": "Wembley,Arsenal"
+            }
+        }
+    ]
+        
+}
