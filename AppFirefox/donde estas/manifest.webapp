@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "name": "¿Dónde estarías?",
+    "description": "Es un juego online, se mostrarán unas imagenes y tendrás que descubrir en que lugar del mapa estás.",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/img/icon-16.png",
+        "48": "/img/icon-48.png",
+        "128": "/img/icon-128.png"
+    },
+    "developer": {
+        "name": "Marcos Franco",
+        "url": "http://localhost:8012"
+    }
+}
