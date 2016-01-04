@@ -56,12 +56,6 @@
             </ul>
           </li>
         </ul>
-        <!--
-        <ul class="nav navbar-nav navbar-right">
-          <li><button type="button" class="btn btn-success">Empezar</button></li>
-          <li><button type="button" class="btn btn-danger" disabled="disabled">Abandonar</button></li>
-        </ul>
-        -->
         <form class="navbar-form navbar-right">
           <button id="empezar" type="button" class="btn btn-success" onclick="empezarJuego()">Empezar</button>
           <button id="continuar" type="button" class="btn btn-warning" onclick="continuarJuego()">Continuar</button>
@@ -73,6 +67,10 @@
   </nav>
   <!-- CONTENIDO -->
   <div class="container">
+    <!-- ALERTAS -->
+    <div id="alerta1" class="alert alert-success" role="alert">
+      <a>Mensaje enviado correctamente. Gracias por ponerse en contacto con nosotros.</a>
+    </div>
 
     <!-- INICIO -->
     <div id="inicio">
@@ -86,7 +84,9 @@
           </div>
         </div>
         <div class="col-md-1">
-          <img src="https://blogdondeesta.files.wordpress.com/2014/09/wally.jpg" alt="Wally" style="margin: 5px; width: 100%;" class="foto">
+          <div id="wally" class="animacion">
+            <img src="https://blogdondeesta.files.wordpress.com/2014/09/wally.jpg" alt="Wally" style="margin: 5px; width: 100%;" class="foto">
+          </div>
         </div>
       </div>
 
@@ -134,11 +134,54 @@
         <hr>
 
         <footer>
+         <div class="col-md-4">
           <p>© Marcos Franco Cedillo 2015</p>
+         </div>
+         <div class="col-md-7">
+          <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+         </div>
+         <div class="col-md-1">
+          <button type="button" class="btn btn-info" onclick="abrirFormulario()">Contacto</button>
+         </div>
         </footer>
       </div> <!-- /container -->
     </div>
 
+    <!-- FORMULARIO DE CONTACTO -->
+     <form class="contact_form" action="#" id="contact_form" runat="server"> 
+      <div> 
+        <ul> 
+          <li> 
+            <h2>Contacto</h2> 
+            <span class="required_notification">* Datos requeridos</span> 
+          </li> 
+          <li> 
+            <label for="name">Nombre:</label> 
+            <input type="text" placeholder="Nombre" required /> 
+          </li> 
+          <li> 
+            <label for="email">Email:</label> 
+            <input type="email" name="email" placeholder="nombre@ejemplo.com" required /> 
+            <span class="form_hint">Formato correcto: "nombre@ejemplo.com"</span> 
+          </li> 
+          <li> 
+            <label for="website">Sitio web:</label> 
+            <input type="url" name="website" placeholder="http://www.ejemplo.com"  pattern="(http|https)://.+" /> 
+            <span class="form_hint">Formato correcto: "http://www.ejemplo.com"</span> 
+          </li> 
+          <li> 
+            <label for="message">Mensaje:</label> 
+            <textarea name="message" placeholder="Texto aquí" cols="40" rows="6" required></textarea> 
+          </li> 
+          <li> 
+            <button class="btn btn-success submit" type="submit">Enviar mensaje</button> 
+            <button id="reset" type="reset" class="btn btn-warning">Borrar mensaje</button>
+            <button id="salir" type="reset" class="btn btn-danger" onclick="cerrarFormulario()">Salir</button>         
+          </li> 
+        </ul> 
+      </div> 
+    </form>
+    
     <!-- JUEGO -->
     <div id="juego">
       <h1 id="titulo"></h1>

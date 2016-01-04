@@ -28,6 +28,24 @@ $(document).ready(function(){
     $("#finalizar").hide();
     $("#abandonar").hide();
     $("#historial1").hide();
+    $("#alerta1").hide();
+    $("#contact_form").hide();
+    // FACEBOOK
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '141355139571410',
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     // Gestión del localStorage
     leerLocal();
     mostrarHistorial(historico, "entradaHistorial");/*
@@ -63,9 +81,15 @@ $(document).ready(function(){
     actual = history.length;
     historial = actual;
     if(location.search!=""){
-      selectJuego(location.search.split('-')[0].split('?')[1]);
-      dificultad = decodeURI(location.search.split('-')[1]);
-      getDificultad();
+      if(location.search.contains("email")){
+        $("#alerta1").fadeTo(2000, 500).slideUp(500, function(){$("#alerta1").alert('close');});
+        //location.search="";
+        //location="";
+      }else{
+        selectJuego(location.search.split('-')[0].split('?')[1]);
+        dificultad = decodeURI(location.search.split('-')[1]);
+        getDificultad();
+      }
       /*switch(dificultad) {
           case 'Fácil':
               difficult=3000;
@@ -194,6 +218,7 @@ function empezarJuego(){
     $("#inicio").fadeOut("fast");
     $("#juego").fadeIn("slow");
     $("#empezar").hide();
+    $("#contact_form").hide();
     $("#abandonar").show();
     document.getElementById("selJuego").removeAttribute('data-toggle');
     document.getElementById("selDificultad").removeAttribute('data-toggle');
@@ -366,4 +391,27 @@ function leerLocal(){
                         actual: localStorage.getItem("actual"+i)
                       });
     } 
+}
+
+function abrirFormulario(){
+  $("#inicio").fadeOut("fast");
+  $("#contact_form").fadeIn("fast");
+}
+
+function enviarFormulario(){
+  cerrarFormulario();
+  $("#alerta1").fadeTo(2000, 500).slideUp(500, function(){$("#alerta1").alert('close');});
+}
+
+function cerrarFormulario(){
+  $("#inicio").fadeIn("fast");
+  $("#contact_form").fadeOut("fast");
+}
+
+function publicarFacebook(){
+  FB.ui({
+    method: 'feed',
+    link: 'https://developers.facebook.com/docs/',
+    caption: 'An example caption',
+  }, function(response){});
 }
